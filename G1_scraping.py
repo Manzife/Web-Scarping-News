@@ -1,26 +1,28 @@
 import requests
 from bs4 import BeautifulSoup
-#pegando o link da página que queremos pegar as ifnormações
+# pegando o link da página que queremos pegar as ifnormações
 result = requests.get("https://www.nexojornal.com.br/")
-#print(result.status_code)
-#print(result.headers)
+# print(result.status_code)
+# print(result.headers)
 
-#achando o conteúdo da pagina score
+# achando o conteúdo da pagina score
 src = result.content
 
-#trasnformando em um objeto Soup
+# trasnformando em um objeto Soup
 soup = BeautifulSoup(src, "html")
 
-#Encontrando todos os conteúdos com "a"
-#links que queremos
+# Encontrando todos os conteúdos com "a"
+# links que queremos
 urls = []
 for b in soup.find_all("a"):
     print(b)
     print("\n")
     urls.append(b.get("href"))
-    
-    #loop das notícias e baixar o conteúdo da notícia, 
-        
+
+    # loop das notícias e baixar o conteúdo da notícia,
+    # asdf
+
+
 def palavraschaves(*args):
     text = 'asdfasdfasdfa'
     for i in args:
@@ -29,13 +31,13 @@ def palavraschaves(*args):
         else:
             print(i, 'nao esta')
 
+    # urls.append(z.find["href"])
 
-    #urls.append(z.find["href"])
 
 print(urls)
 
-#print(links)
-#print("\n")
+# print(links)
+# print("\n")
 """
 for i in links:
     if "Bolsonaro" in i.text:
